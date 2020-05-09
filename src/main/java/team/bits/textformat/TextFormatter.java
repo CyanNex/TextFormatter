@@ -13,16 +13,16 @@ public class TextFormatter {
 
     private final LinkedList<TextPart> parts = new LinkedList<>();
 
-    public TextFormatter(@NotNull String text) {
-        this.parts.add(new TextPart(text));
+    public TextFormatter(@NotNull String text, Object... args) {
+        this.parts.add(new TextPart(String.format(text, args)));
     }
 
     public TextFormatter() {
         this("");
     }
 
-    public @NotNull TextFormatter then(@NotNull String text) {
-        this.parts.add(new TextPart(text));
+    public @NotNull TextFormatter then(@NotNull String text, Object... args) {
+        this.parts.add(new TextPart(String.format(text, args)));
         return this;
     }
 
