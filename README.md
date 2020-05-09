@@ -25,6 +25,8 @@ Add TextFormatter as a maven dependency
 
 To use TextFormatter, [Spigot](https://www.spigotmc.org/wiki/spigot-maven/) or [Paper](https://github.com/PaperMC/Paper#how-to-plugin-developers) is required
 
+Pre-compiled binaries can be found in the [Releases](https://github.com/Koenn11/TextFormatter/releases) tab
+
 ## Usage
 
 ```java
