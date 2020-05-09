@@ -98,7 +98,7 @@ public class TextFormatter {
     }
 
     public void send(@NotNull Player player) {
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), String.format("tellraw %s %s", player, this));
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), String.format("tellraw %s %s", player.getName(), this));
     }
 
     public void send(@NotNull Collection<Player> players) {
