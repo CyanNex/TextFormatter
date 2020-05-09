@@ -2,6 +2,7 @@ package team.bits.textformat;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -97,7 +98,7 @@ public class TextFormatter {
     }
 
     public void send(@NotNull Player player) {
-        player.sendRawMessage(this.toString());
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), String.format("tellraw %s %s", player, this));
     }
 
     public void send(@NotNull Collection<Player> players) {
