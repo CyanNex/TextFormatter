@@ -4,7 +4,7 @@ TextFormatter is a simple Bukkit library for minecraft JSON text formatting base
 
 ## Installation
 
-Add the JitPack maven repository
+Add the [JitPack](https://jitpack.io/) maven repository
 
 ```xml
 <repository>
