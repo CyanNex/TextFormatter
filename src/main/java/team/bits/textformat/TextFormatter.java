@@ -71,12 +71,14 @@ public class TextFormatter {
     public @NotNull JsonObject toJSON() {
         JsonObject json = this.parts.get(0).toJSON();
 
-        JsonArray extra = new JsonArray();
-        for (int i = 1; i < this.parts.size(); i++) {
-            extra.add(this.parts.get(i).toJSON());
-        }
+        if (this.parts.size() > 1) {
+            JsonArray extra = new JsonArray();
+            for (int i = 1; i < this.parts.size(); i++) {
+                extra.add(this.parts.get(i).toJSON());
+            }
 
-        json.add("extra", extra);
+            json.add("extra", extra);
+        }
 
         return json;
     }
