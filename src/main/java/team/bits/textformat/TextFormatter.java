@@ -31,8 +31,10 @@ public class TextFormatter {
         return this;
     }
 
-    public @NotNull TextFormatter style(@NotNull ChatColor style) {
-        this.parts.getLast().style(style);
+    public @NotNull TextFormatter style(@NotNull ChatColor... styles) {
+        for (final ChatColor style : styles) {
+            this.parts.getLast().style(style);
+        }
         return this;
     }
 
