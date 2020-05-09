@@ -48,6 +48,21 @@ public class TextFormatter {
         return this;
     }
 
+    public @NotNull TextFormatter tooltip(@NotNull String tooltip) {
+        this.onHover(MessageAction.SHOW_TEXT, tooltip);
+        return this;
+    }
+
+    public @NotNull TextFormatter command(@NotNull String command) {
+        this.onClick(MessageAction.RUN_COMMAND, command);
+        return this;
+    }
+
+    public @NotNull TextFormatter link(@NotNull String link) {
+        this.onClick(MessageAction.OPEN_URL, link);
+        return this;
+    }
+
     public @NotNull TextFormatter newLine() {
         this.then("\n");
         return this;
