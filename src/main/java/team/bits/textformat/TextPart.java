@@ -2,6 +2,7 @@ package team.bits.textformat;
 
 import com.google.gson.JsonObject;
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
@@ -15,6 +16,7 @@ public class TextPart {
     private final String text;
 
     private ChatColor color;
+    private Color hexColor;
     private MessageEvent clickEvent;
     private MessageEvent hoverEvent;
 
@@ -29,6 +31,11 @@ public class TextPart {
             throw new IllegalArgumentException(String.format("%s is not a color", color));
         }
         this.color = color;
+    }
+
+    public void color(@NotNull Color color) {
+        Objects.requireNonNull(color);
+        this.hexColor = color;
     }
 
     public void style(@NotNull ChatColor style) {
@@ -62,7 +69,13 @@ public class TextPart {
         JsonObject json = new JsonObject();
 
         json.addProperty("text", this.text);
-        json.addProperty("color", StyleHelper.getStyleName(this.color));
+        if (this.hexColor != null) {
+            Color color = this.hexColor;
+            String hex = String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue());
+            json.addProperty("color", hex.toUpperCase());
+        } else {
+            json.addProperty("color", StyleHelper.getStyleName(this.color));
+        }
 
         for (final ChatColor style : this.styles) {
             json.addProperty(StyleHelper.getStyleName(style), true);
