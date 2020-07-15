@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Color;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,6 +29,11 @@ public class TextFormatter {
     }
 
     public @NotNull TextFormatter color(@NotNull ChatColor color) {
+        this.parts.getLast().color(color);
+        return this;
+    }
+
+    public @NotNull TextFormatter color(@NotNull Color color) {
         this.parts.getLast().color(color);
         return this;
     }
