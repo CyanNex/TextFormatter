@@ -1,8 +1,10 @@
-# TextFormatter [![Build Status](https://dev.azure.com/s1115867/s1115867/_apis/build/status/Koenn11.TextFormatter?branchName=master)](https://dev.azure.com/s1115867/s1115867/_build/latest?definitionId=1&branchName=master)
+# TextFormatter [![](https://jitpack.io/v/Koenn11/TextFormatter.svg)](https://jitpack.io/#Koenn11/TextFormatter)
 
 TextFormatter is a simple Bukkit library for minecraft JSON text formatting based on the old Fanciful library
 
 ## Installation
+
+### Maven
 
 Add the [JitPack](https://jitpack.io/) maven repository
 
@@ -13,7 +15,7 @@ Add the [JitPack](https://jitpack.io/) maven repository
 </repository>
 ```
 
-Add TextFormatter as a maven dependency
+Add TextFormatter as a dependency
 
 ```xml
 <dependency>
@@ -21,6 +23,24 @@ Add TextFormatter as a maven dependency
     <artifactId>TextFormatter</artifactId>
     <version>VERSION</version>
 </dependency>
+```
+
+### Gradle
+
+Add the [JitPack](https://jitpack.io/) maven repository
+
+```gradle
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+```
+
+Add TextFormatter as a dependency
+
+```gradle
+dependencies {
+    implementation 'com.github.Koenn11:TextFormatter:Tag'
+}
 ```
 
 To use TextFormatter, [Spigot](https://www.spigotmc.org/wiki/spigot-maven/) or [Paper](https://github.com/PaperMC/Paper#how-to-plugin-developers) is required
