@@ -113,7 +113,10 @@ public class TextFormatter {
         }
     }
 
-    public void replace(@NotNull String template, @NotNull String replacement) {
-        this.parts.forEach(part -> part.replace(template, replacement));
+    public @NotNull TextFormatter replace(@NotNull String template, @NotNull String replacement) {
+        TextFormatter clone = new TextFormatter();
+        clone.parts.clone();
+        this.parts.forEach(part -> clone.parts.add(part.replace(template, replacement)));
+        return clone;
     }
 }

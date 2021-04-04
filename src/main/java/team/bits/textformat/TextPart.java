@@ -101,7 +101,19 @@ public class TextPart {
         return result.toString();
     }
 
-    public void replace(@NotNull String template, @NotNull String replacement) {
-        this.text = this.text.replace(template, replacement);
+    @Override
+    public @NotNull TextPart clone() {
+        TextPart clone = new TextPart(this.text);
+        clone.color = this.color;
+        clone.hexColor = this.hexColor;
+        clone.clickEvent = this.clickEvent;
+        clone.hoverEvent = this.hoverEvent;
+        return clone;
+    }
+
+    public @NotNull TextPart replace(@NotNull String template, @NotNull String replacement) {
+        TextPart clone = this.clone();
+        clone.text = this.text.replace(template, replacement);
+        return clone;
     }
 }
