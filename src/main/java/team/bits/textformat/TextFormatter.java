@@ -112,4 +112,8 @@ public class TextFormatter {
             this.send(player);
         }
     }
+
+    public void replace(@NotNull String template, @NotNull String replacement) {
+        this.parts.forEach(part -> part.replace(template, replacement));
+    }
 }

@@ -13,7 +13,7 @@ public class TextPart {
 
     private final Collection<ChatColor> styles = new LinkedList<>();
 
-    private final String text;
+    private String text;
 
     private ChatColor color;
     private Color hexColor;
@@ -99,5 +99,9 @@ public class TextPart {
         }
         result.append(this.text);
         return result.toString();
+    }
+
+    public void replace(@NotNull String template, @NotNull String replacement) {
+        this.text = this.text.replace(template, replacement);
     }
 }
